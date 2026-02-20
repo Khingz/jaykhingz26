@@ -31,13 +31,14 @@ const galleryMedia: MediaItem[] = [
     id: 4,
     type: "image",
     url: "/images/4.jpeg",
-    caption: "Love & Laughter",
+    caption: "Moments We Cherish",
+
   },
   {
     id: 5,
     type: "image",
     url: "/images/5.jpeg",
-    caption: "Moments We Cherish",
+    caption: "Love & Laughter",
   },
   {
     id: 6,
