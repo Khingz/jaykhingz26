@@ -7,7 +7,12 @@ import { useToast } from "@/hooks/use-toast";
 const RsvpSection = () => {
   const ref = useScrollReveal();
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", guests: "1", attending: "yes" });
+  const [form, setForm] = useState({
+    name: "",
+    guests: "1",
+    attending: "yes",
+    message: "",
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,7 +20,7 @@ const RsvpSection = () => {
       title: "RSVP Received!",
       description: `Thank you, ${form.name}. We look forward to celebrating with you!`,
     });
-    setForm({ name: "", guests: "1", attending: "yes" });
+    setForm({ name: "", guests: "1", attending: "yes", message: "" });
   };
 
   return (
@@ -24,7 +29,9 @@ const RsvpSection = () => {
         <p className="font-sans text-xs tracking-[0.4em] uppercase text-muted-foreground mb-4">
           Kindly Respond
         </p>
-        <h2 className="font-script text-4xl sm:text-5xl text-primary mb-10">RSVP</h2>
+        <h2 className="font-script text-4xl sm:text-5xl text-primary mb-10">
+          RSVP
+        </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5 text-left">
           <div>
@@ -77,6 +84,18 @@ const RsvpSection = () => {
             </div>
           </div>
 
+          <div>
+            <label className="font-sans text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2 block">
+              Leave us a message
+            </label>
+            <textarea
+              placeholder="Enter your message..."
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              className="bg-muted border-border font-serif text-foreground w-full h-[10rem] p-2 resize-none rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+            />
+          </div>
+
           <Button
             type="submit"
             className="w-full mt-4 bg-primary text-primary-foreground font-sans text-xs tracking-[0.3em] uppercase hover:bg-primary/90 py-6"
@@ -91,10 +110,20 @@ const RsvpSection = () => {
             For Enquiries
           </p>
           <p className="font-serif text-lg text-foreground">
-            <a href="tel:08163792207" className="hover:text-primary transition-colors">0816 379 2207</a>
+            <a
+              href="tel:08163792207"
+              className="hover:text-primary transition-colors"
+            >
+              0816 379 2207
+            </a>
           </p>
           <p className="font-serif text-lg text-foreground">
-            <a href="tel:09059113756" className="hover:text-primary transition-colors">0905 911 3756</a>
+            <a
+              href="tel:09059113756"
+              className="hover:text-primary transition-colors"
+            >
+              0905 911 3756
+            </a>
           </p>
         </div>
       </div>

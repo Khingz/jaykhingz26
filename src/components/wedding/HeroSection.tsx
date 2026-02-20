@@ -5,7 +5,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(/images/hero.jpeg)` }}
       />
-      <div className="absolute inset-0 bg-background/65" />
+      <div className="absolute inset-0 bg-background/80" />
 
       <div className="relative z-10 text-center px-6 max-w-2xl mx-auto">
         <p className="font-sans text-xs tracking-[0.4em] uppercase text-gold-light opacity-0 animate-fade-up mb-8">
