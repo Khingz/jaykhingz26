@@ -18,7 +18,7 @@ const RsvpSection = () => {
     e.preventDefault();
     toast({
       title: "RSVP Received!",
-      description: `Thank you, ${form.name}. We look forward to celebrating with you!`,
+      description: `Thank you, ${form.name}. We look forward to seeing you and celebrating with you!`,
     });
     setForm({ name: "", guests: "1", attending: "yes", message: "" });
   };
@@ -33,7 +33,14 @@ const RsvpSection = () => {
           RSVP
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-5 text-left">
+        <form
+          name="RSVP Form"
+          method="POST"
+          data-netlify="true"
+          onSubmit={handleSubmit}
+          className="space-y-5 text-left"
+        >
+          <input type="hidden" name="form-name" value="RSVP Form" />
           <div>
             <label className="font-sans text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2 block">
               Full Name
@@ -41,6 +48,7 @@ const RsvpSection = () => {
             <Input
               required
               value={form.name}
+              name="Full name"
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               className="bg-muted border-border font-serif text-foreground"
               placeholder="Your full name"
@@ -53,6 +61,7 @@ const RsvpSection = () => {
             </label>
             <Input
               type="number"
+              name="Number of guest"
               min="1"
               max="10"
               required
@@ -71,6 +80,7 @@ const RsvpSection = () => {
                 <button
                   key={val}
                   type="button"
+                  name="Will you attend"
                   onClick={() => setForm({ ...form, attending: val })}
                   className={`flex-1 py-3 border font-sans text-xs tracking-[0.2em] uppercase transition-colors ${
                     form.attending === val
@@ -91,8 +101,9 @@ const RsvpSection = () => {
             <textarea
               placeholder="Enter your message..."
               value={form.message}
+              name="message"
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="bg-muted border-border font-serif text-foreground w-full h-[10rem] p-2 resize-none rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+              className="border-primary bg-muted border-border font-serif text-foreground w-full h-[10rem] p-2 resize-none rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
             />
           </div>
 
