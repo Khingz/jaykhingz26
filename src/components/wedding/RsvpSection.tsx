@@ -15,7 +15,7 @@ const RsvpSection = () => {
   });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    // e.preventDefault();
     toast({
       title: "RSVP Received!",
       description: `Thank you, ${form.name}. We look forward to seeing you and celebrating with you!`,
@@ -41,6 +41,7 @@ const RsvpSection = () => {
           className="space-y-5 text-left"
         >
           <input type="hidden" name="form-name" value="RSVP Form" />
+          <input type="hidden" name="bot-field" />
           <div>
             <label className="font-sans text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2 block">
               Full Name
@@ -103,7 +104,7 @@ const RsvpSection = () => {
               value={form.message}
               name="message"
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="border-primary bg-muted border-border font-serif text-foreground w-full h-[10rem] p-2 resize-none rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+              className="border-[hsl(var(--border))] bg-muted border-border font-serif text-foreground w-full h-[10rem] p-2 resize-none rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
             />
           </div>
 
