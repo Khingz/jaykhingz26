@@ -37,7 +37,7 @@ const RsvpSection = () => {
 
       toast({
         title: "RSVP Received!",
-        description: `Thank you, ${form.name}. We look forward to seeing you and celebrating with you!`,
+        description: `Thank you, ${form.name}. We have received your RSVP and look forward to seeing you and celebrating with you!`,
       });
 
       setForm({ name: "", guests: "1", attending: "yes", message: "" });
