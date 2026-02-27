@@ -27,7 +27,7 @@ const RsvpSection = () => {
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           name: form.name,
-          guests: form.guests,
+          guest: form.guests,
           attending: form.attending,
           message: form.message,
           Total: "XX",
