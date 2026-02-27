@@ -29,7 +29,7 @@ const RsvpSection = () => {
           name: form.name,
           guest: form.guests,
           attending: form.attending,
-          message: form.message,
+          message: form.message ? form.message != "" : "No message was left",
           Total: "XX",
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
