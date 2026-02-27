@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -99,6 +104,12 @@ export default {
         "fade-up-delay-3": "fade-up 1s ease-out 0.9s forwards",
         "fade-in": "fade-in 1.5s ease-out forwards",
         shimmer: "shimmer 3s linear infinite",
+        bounce: "bounce 0.6s infinite",
+      },
+      animationDelay: {
+        75: "75ms",
+        150: "150ms",
+        300: "300ms",
       },
     },
   },
